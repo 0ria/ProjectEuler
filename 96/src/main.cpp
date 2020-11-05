@@ -1,8 +1,8 @@
+#include <algorithm>
 #include <cmath>
 #include <cstdio>
-#include <vector>
 #include <iostream>
-#include <algorithm>
+#include <vector>
 using namespace std;
 
 std::vector<std::vector<int> > sudokuMatrix;
@@ -13,22 +13,19 @@ void showMatrix(void) {
       std::cout << number;
     }
     std::cout << std::endl;
-  } 
+  }
 }
 
 bool checkNumberInPos(int posY, int posX, int number) {
   for (int i = 0; i < 9; i++)
-    if (sudokuMatrix[posY][i] == number)
-      return false;
+    if (sudokuMatrix[posY][i] == number) return false;
   for (int i = 0; i < 9; i++)
-    if (sudokuMatrix[i][posX] == number)
-      return false;
+    if (sudokuMatrix[i][posX] == number) return false;
   int auxPosX = std::floor(posX / 3) * 3;
   int auxPosY = std::floor(posY / 3) * 3;
   for (int i = 0; i < 3; i++)
     for (int j = 0; j < 3; j++)
-      if (sudokuMatrix[auxPosY + i][auxPosX + j] == number)
-        return false;
+      if (sudokuMatrix[auxPosY + i][auxPosX + j] == number) return false;
   return true;
 }
 
@@ -43,25 +40,24 @@ void implementSolution(void) {
             sudokuMatrix[j][i] = 0;
           }
         }
-        return; 
+        return;
       }
     }
   }
   showMatrix();
 }
 
-
 int main() {
-    for (int i = 0; i < 9; i++) {
-      std::vector<int> numbers;
-      std::string n;
-      std::cin >> n;
-      for (char const c: n) {
-        numbers.push_back(c - '0');
-      }
-      sudokuMatrix.push_back(numbers);
-      numbers.clear();
+  for (int i = 0; i < 9; i++) {
+    std::vector<int> numbers;
+    std::string n;
+    std::cin >> n;
+    for (char const c : n) {
+      numbers.push_back(c - '0');
     }
-    implementSolution();
-    return 0;
+    sudokuMatrix.push_back(numbers);
+    numbers.clear();
+  }
+  implementSolution();
+  return 0;
 }

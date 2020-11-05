@@ -9,7 +9,17 @@ For example, f(10) = 5 since there are five different ways to express 10:
 * 1 + 1 + 8
 * 1 + 1 + 4 + 4
 * 1 + 1 + 2 + 2 + 4
-* 2 + 2 + 4
+* 2 + 4 + 4
 * 2 + 8
 
 What is f(n) for a given n?
+
+16 8 2
+16 4 4 2
+16 4 4 1 1
+16 4 2 2 1 1
+8 8 4 4 2
+8 8 4 4 1 1 
+8 8 4 2 2 1 1
+
+8 8 8 2
