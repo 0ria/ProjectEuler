@@ -1,5 +1,7 @@
 # Project Euler #171: Finding numbers for which the sum of the squares of the digits is a square
 
+## Working but not optimal, for big numbers it slows too much
+
 For a positive integer n, let f(n) be the sum of the squares of the digits (in base 10) of n, e.g.
 f(3) = 3^2 = 9,
 f(25) = 2^2 + 5^2 = 29
